@@ -1,0 +1,82 @@
+<div class="blog-dialog">
+  <!-- __ -->
+  <div class="d-flex justify-content-between align-items-center m-3">
+    <div>
+      <h3 class="header">
+        <span>
+          {{ isUpdate ? "Update" : "View" }}
+        </span>
+      </h3>
+    </div>
+    <button (click)="close()" mat-button color="primary" class="x-button">
+      x
+    </button>
+  </div>
+
+  <!-- _View_ -->
+
+  <div class="mt-3">
+    <div *ngIf="!isUpdate">
+      <div class="row mb-3">
+        <div class="col-md-6 updata-img">
+          <img src="assets/images/image{{ imageUrl }}.jpg" class="w-100" />
+        </div>
+
+        <div class="col-md-6">
+          <h2>{{ title }}</h2>
+          <p>{{ body }}</p>
+        </div>
+      </div>
+
+      <!-- __ -->
+      <div class="row comments" *ngFor="let comment of commentData">
+        <div class="col-md-2">
+          <img
+            src="assets/images/profile/profile{{ comment.userId }}.jpg"
+            class="user-profile-img"
+          />
+        </div>
+        <div class="col-md-10">
+          <h3>{{ comment.name }}</h3>
+          <p>{{ comment.body }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- _Update_ -->
+
+  <div *ngIf="isUpdate">
+    <form [formGroup]="form" class="form">
+      <div class="container">
+        <div class="row">
+          <mat-form-field>
+            <mat-label>Blog Title</mat-label>
+            <input matInput formControlName="title" />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field>
+            <mat-label>Blog Body</mat-label>
+            <textarea
+              matInput
+              formControlName="body"
+              cols="40"
+              rows="10"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="buttons">
+        <button
+          [disabled]="!form.valid"
+          (click)="onSubmit()"
+          mat-raised-button
+          color="accent"
+        >
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

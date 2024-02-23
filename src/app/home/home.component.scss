@@ -1,0 +1,36 @@
+.card {
+  background-color: #ffffff;
+  max-width: 400px;
+
+  .card-header {
+    justify-content: center;
+  }
+
+  .card-title {
+    // tasan kisimlari 3 nokta ile belirtmek
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    margin-bottom: 10px;
+
+    text-transform: capitalize;
+    color: #8531a9;
+  }
+
+  .card-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    margin: 10px 0;
+  }
+}
+
+.mr {
+  margin-right: 10px;
+}

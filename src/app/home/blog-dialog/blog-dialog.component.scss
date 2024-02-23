@@ -1,0 +1,46 @@
+::ng-deep .mat-mdc-dialog-container {
+  height: auto;
+  /* 
+    mat-dialog-container in class i html dosyamizda yok
+    mat-dialog third party entegre ettigimiz birsey ve kendiliginden bir class i ve css i var
+    boyle durumlarda css ine yeni ozellikler vermek icin
+    ::ng-deep i kullaniriz
+    ::ng-deep .(ayarlamak istedigimizin class i )
+  */
+}
+
+.blog-dialog {
+  background-color: #fff;
+  padding: 1.5rem;
+
+  .header {
+    margin: 0px;
+    font-size: 28px;
+  }
+  .x-button {
+    font-size: 24px;
+  }
+
+  .comments {
+    background-color: lightgrey;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  .updata-img {
+    padding: 0;
+  }
+
+  .user-profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .form {
+    min-width: 550px;
+  }
+
+  .buttons {
+    padding: 0 12px;
+  }
+}
